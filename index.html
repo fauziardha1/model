@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    </head>
+
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+    <!-- below is the library to load extras 3d or large model -->
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded vr-mode-ui="enabled: false" arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-assets>
+            <a-asset-item id="animated-model" 
+            src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-marker id="animated-marker" type="barcode" value='6'>
+            <a-entity animation-mixer="" gltf-model="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf" position="0 0.35878 0" rotation="0 -90 90" sound__sound="autoplay: true; on: null; src: https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg; volume: 10"></a-entity>
+
+            <a-box color="lightblue" position="-1.20713 0.359 0" rotation="-1.542975342287307 -88.17190213488726 82.96371577714808" material="" geometry="" gltf-model="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf" animation-mixer=""></a-box>
+
+        </a-marker>
+
+        
+        <a-entity camera></a-entity>
+
+    </a-scene>
+</body>
+</html>
